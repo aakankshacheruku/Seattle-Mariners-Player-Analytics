@@ -124,3 +124,13 @@ Example outputs from `make quickstart`:
 - [hitter_value_top25.csv](reports/tables/hitter_value_top25.csv)
 - [pitcher_value_top25.csv](reports/tables/pitcher_value_top25.csv)
 
+## Preview
+
+Example outputs from `make quickstart`:
+
+![Top 25 Mariners Hitters — Composite Score](reports/figures/top25_hitters_score.png)
+
+- [hitter_value_top25.csv](reports/tables/hitter_value_top25.csv)
+- [pitcher_value_top25.csv](reports/tables/pitcher_value_top25.csv)
+
+
