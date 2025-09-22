@@ -114,3 +114,13 @@ python scripts/make_figures.py
 - **OPS vs wOBA**: chooses OPS first for interpretability; will add wOBA once weights are validated.  
 - **Pitcher value**: blended K/BB (command) and 1/ERA (run prevention) at 50/50 to avoid single-metric dominance.  
 - **Reliability**: clamp extremes and guard against small samples; will add IP/PA-based weights in v0.2.
+
+## Preview
+
+Example outputs from `make quickstart`:
+
+![Top 25 Mariners Hitters — Composite Score](reports/figures/top25_hitters_score.png)
+
+- [hitter_value_top25.csv](reports/tables/hitter_value_top25.csv)
+- [pitcher_value_top25.csv](reports/tables/pitcher_value_top25.csv)
+
