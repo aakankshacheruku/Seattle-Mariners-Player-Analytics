@@ -84,3 +84,20 @@ Outputs:
 ## Statcast (Optional)
 
 A helper is provided at `src/data/statcast_loader.py` to fetch Statcast pitch-level data by season window and filter to Mariners home/away games. This is heavier data; keep files local (in `data/raw/`) and avoid committing them.
+python -m pip install -r requirements.txt
+
+python scripts/pull_data.py --start 2022 --end 2024 --team SEA
+python scripts/build_features.py
+python scripts/make_figures.py
+## Quickstart (5 min)
+```bash
+python -m pip install -r requirements.txt
+
+# Pull 2022–2024 Mariners data
+python scripts/pull_data.py --start 2022 --end 2024 --team SEA
+
+# Build features
+python scripts/build_features.py
+
+# Generate reports
+python scripts/make_figures.py
