@@ -34,3 +34,4 @@ dashboards/*.pbix
 dashboards/*.hyper
 dashboards/*.twb
 dashboards/*.twbx
+!data/sample/

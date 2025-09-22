@@ -84,3 +84,33 @@ Outputs:
 ## Statcast (Optional)
 
 A helper is provided at `src/data/statcast_loader.py` to fetch Statcast pitch-level data by season window and filter to Mariners home/away games. This is heavier data; keep files local (in `data/raw/`) and avoid committing them.
+python -m pip install -r requirements.txt
+
+python scripts/pull_data.py --start 2022 --end 2024 --team SEA
+python scripts/build_features.py
+python scripts/make_figures.py
+
+## Quickstart (5 min)
+```bash
+python -m pip install -r requirements.txt
+
+# Pull 2022–2024 Mariners data
+python scripts/pull_data.py --start 2022 --end 2024 --team SEA
+
+# Build features
+python scripts/build_features.py
+
+# Generate reports
+python scripts/make_figures.py
+
+## Data Lineage
+| Source              | Loader                                    | Key fields                       | Transformations                   | Output                                   |
+|---------------------|-------------------------------------------|----------------------------------|-----------------------------------|------------------------------------------|
+| pybaseball batting  | src/data/loaders.py#get_team_batting      | PA, H, 2B, 3B, HR, BB, SO, SF    | type cleanup, ID harmonization    | data/interim/team_batting_*.csv          |
+| pybaseball pitching | src/data/loaders.py#get_team_pitching     | IP, ER, SO, BB                   | IP parsing, ERA_calc              | data/interim/team_pitching_*.csv         |
+| merged hitters      | src/features/engineering.py#hitters_basic_features | AVG, SLG, OBP, OPS               | NA-safe division, singles calc    | data/processed/hitter_features.csv       |
+
+## Decisions & Trade-offs
+- **OPS vs wOBA**: chooses OPS first for interpretability; will add wOBA once weights are validated.  
+- **Pitcher value**: blended K/BB (command) and 1/ERA (run prevention) at 50/50 to avoid single-metric dominance.  
+- **Reliability**: clamp extremes and guard against small samples; will add IP/PA-based weights in v0.2.
