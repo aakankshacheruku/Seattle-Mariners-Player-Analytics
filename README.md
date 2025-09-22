@@ -133,4 +133,15 @@ Example outputs from `make quickstart`:
 - [hitter_value_top25.csv](reports/tables/hitter_value_top25.csv)
 - [pitcher_value_top25.csv](reports/tables/pitcher_value_top25.csv)
 
+## Why Mariners? What I wanted to learn
+- I wanted a realistic, reproducible pipeline: fetch → clean → engineer → model → report.
+- Trade-offs are explicit (OPS before wOBA; ERA before FIP) so decisions are easy to audit.
+- The repo keeps small sample caveats front-and-center (NA-safe math; small reliability weighting).
+
+## Known gaps (v0.2 roadmap)
+- Switch from OPS → wOBA/xwOBA; add park/league normalization.
+- Pitchers: FIP/xfip and context adjustments; innings-weighted reliability curve.
+- Automated CI run on sample data; add lint + type checks.
+
+
 
