@@ -1,0 +1,16 @@
+name: mariners
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - pandas
+  - numpy
+  - matplotlib
+  - scikit-learn
+  - pip
+  - pip:
+    - pybaseball
+    - pyyaml
+    - python-dotenv
+    - polars
+    - tabulate

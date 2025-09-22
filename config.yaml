@@ -1,0 +1,12 @@
+# Project configuration
+project:
+  team: "SEA"
+  start_season: 2019
+  end_season: 2024
+
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+  external: "data/external"
+  figures: "reports/figures"
+  tables: "reports/tables"
